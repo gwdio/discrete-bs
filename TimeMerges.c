@@ -9,10 +9,11 @@ int* makeIncreasing(int size);
 int* makeDecreasing(int size);
 void noiseify(int *data, int size);
 
-#define DATATYPE 'I'
-#define MAXELEMENTS 10000000 // Set to 10 million to Hopefully Generate nlogn trend
-#define TRIALS 200
-#define EXTRA_RUNS 5
+#define DATATYPE 'I' // Type of Data input, either 'R' (Random), 'I' Increasing, or 'D' Decreasing.
+#define MAXELEMENTS 10000000 // Set to 10 million to hopefully generate nlogn trend
+#define TRIALS 200 // Number of trial runs
+// Initial runs have extra overhead for caching and the such, as such these trials are dropped
+#define EXTRA_RUNS 5 // 4 appears to be the bare minimum amount of extra buffer trials
 FILE *trialData;
 
 int main(int argc, char* argv[])
